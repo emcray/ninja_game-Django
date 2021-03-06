@@ -1,0 +1,31 @@
+.banner{
+    background-color: rgba(68, 166, 231, 0.667);
+    min-height: 100px;
+    padding: 10px;
+}
+    .banner h1{
+        text-align: center;
+    }
+    .banner p{
+        text-align: center;
+    }
+.game{
+    margin-top: 20px;
+    text-align: center;
+}
+    .game form{
+        display: inline-block;
+        border: 3px solid black;
+        padding: 25px;
+        margin: 0px 45px 0px 105px;
+        border-radius: 10px;
+    }
+    .game button{
+        border: 3px solid;
+        border-color: rgb(185, 199, 55);
+        background-color: rgb(185, 199, 55);
+        color: black;
+        padding: 4px 8px;
+        font-size: 14px;
+        cursor: pointer;
+    }

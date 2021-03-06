@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Money Game</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+    <div class="banner">
+        <h1>WELCOME TO THE NINJA GAME!</h1>
+        <p><b>Your Gold:<input type="text" disabled value="{{request.session.gold}}"></b></p>
+        <a href="/reset"><button>Reset</button></a>
+    </div>
+    <div class="game">
+        <form action='/process_money' method='post'>
+            {% csrf_token %}
+            <h3>Farm</h3>
+            <p>(earns 10 to 20 golds)</p>
+            <input type="hidden" name="location" value="farm">
+            <button type="submit">Find Gold!</button>
+        </form>
+        <form action='/process_money' method='post'>
+            {% csrf_token %}
+            <h3>Cave</h3>
+            <p>(earns 5 to 10 golds)</p>
+            <input type="hidden" name="location" value="cave">
+            <button type="submit">Find Gold!</button>
+        </form>
+        <form action='/process_money' method='post'>
+            {% csrf_token %}
+            <h3>House</h3>
+            <p>(earns 2 to 5 golds)</p>
+            <input type="hidden" name="location" value="house">
+            <button type="submit">Find Gold!</button>
+        </form>
+        <form action='/process_money' method='post'>
+            {% csrf_token %}
+            <h3>Casino</h3>
+            <p>(earns/takes 0 to 50 golds)</p>
+            <input type="hidden" name="location" value="casino">
+            <button type="submit">Find Gold!</button>
+        </form>
+    </div>
+    <div class="activites">
+        <h2>Activities</h2>
+        <p>{{request.session.activities}}</p>
+    </div>
+</body>
+</html>
